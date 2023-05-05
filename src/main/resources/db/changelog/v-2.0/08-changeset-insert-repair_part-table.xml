@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="08.insert-repair_part-table" author="Tkach_Pavel">
+        <insert tableName="repair_part">
+            <column name="repair_part_id" value="1"/>
+            <column name="name" value="Аккумулятор Li-Polymer Samsung Galaxy A14 4GB/128GB / SM-A145F"/>
+            <column name="price" value="75"/>
+            <column name="amount" value="29"/>
+            <column name="provider_id" value="1"/>
+        </insert>
+        <insert tableName="repair_part">
+            <column name="repair_part_id" value="2"/>
+            <column name="name" value="Защитное стекло Xiaomi Redmi 10A 4GB/128GB"/>
+            <column name="price" value="40"/>
+            <column name="amount" value="11"/>
+            <column name="provider_id" value="2"/>
+        </insert>
+        <insert tableName="repair_part">
+            <column name="repair_part_id" value="3"/>
+            <column name="name" value="Фронтальная камера iPhone 11 128GB / MHDJ3"/>
+            <column name="price" value="150"/>
+            <column name="amount" value="7"/>
+            <column name="provider_id" value="3"/>
+        </insert>
+        <insert tableName="repair_part">
+            <column name="repair_part_id" value="4"/>
+            <column name="name" value="Защитное стекло Huawei nova 10 SE 8GB/128GB / BNE-LX1"/>
+            <column name="price" value="70"/>
+            <column name="amount" value="15"/>
+            <column name="provider_id" value="4"/>
+        </insert>
+        <insert tableName="repair_part">
+            <column name="repair_part_id" value="5"/>
+            <column name="name" value="Сканер отпечатков пальцев iPhone 12 128GB MGJC3 / MGHV3"/>
+            <column name="price" value="125"/>
+            <column name="amount" value="44"/>
+            <column name="provider_id" value="5"/>
+        </insert>
+
+
+        <rollback>
+            <delete tableName="repair_part">
+                <whereParams>
+                    <param name="repair_part_id" value="1"/>
+                    <param name="repair_part_id" value="2"/>
+                    <param name="repair_part_id" value="3"/>
+                    <param name="repair_part_id" value="4"/>
+                    <param name="repair_part_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

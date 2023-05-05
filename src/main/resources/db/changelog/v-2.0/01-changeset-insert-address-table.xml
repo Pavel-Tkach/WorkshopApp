@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="01.insert-address-table" author="Tkach_Pavel">
+        <insert tableName="address">
+            <column name="address_id" value="1"/>
+            <column name="city" value="Moscow"/>
+            <column name="street" value="Tverskaya"/>
+            <column name="house" value="1"/>
+        </insert>
+        <insert tableName="address">
+            <column name="address_id" value="2"/>
+            <column name="city" value="St. Petersburg"/>
+            <column name="street" value="Nevsky"/>
+            <column name="house" value="2"/>
+        </insert>
+        <insert tableName="address">
+            <column name="address_id" value="3"/>
+            <column name="city" value="Kazan"/>
+            <column name="street" value="Baumana"/>
+            <column name="house" value="3"/>
+        </insert>
+        <insert tableName="address">
+            <column name="address_id" value="4"/>
+            <column name="city" value="Novosibirsk"/>
+            <column name="street" value="Lenina"/>
+            <column name="house" value="8"/>
+        </insert>
+        <insert tableName="address">
+            <column name="address_id" value="5"/>
+            <column name="city" value="Vladivostok"/>
+            <column name="street" value="Svetlanskaya"/>
+            <column name="house" value="44"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="address">
+                <whereParams>
+                    <param name="address_id" value="1"/>
+                    <param name="address_id" value="2"/>
+                    <param name="address_id" value="3"/>
+                    <param name="address_id" value="4"/>
+                    <param name="address_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

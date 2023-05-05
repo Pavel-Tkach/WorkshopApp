@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="02.insert-users-table" author="Tkach_Pavel">
+        <insert tableName="users">
+            <column name="user_id" value="1"/>
+            <column name="password" value="qUBTqplJ"/>
+            <column name="email" value="wenzlaff@gmail.com"/>
+            <column name="phone_number" value="+375336842291"/>
+            <column name="date_block" value="null"/>
+            <column name="first_name" value="Ефим"/>
+            <column name="second_name" value="Иванов"/>
+            <column name="patronymic" value="Геннадьевич"/>
+            <column name="address_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="user_id" value="2"/>
+            <column name="password" value="iYHqfNDP"/>
+            <column name="email" value="bbirth@gmail.com"/>
+            <column name="phone_number" value="+375294442591"/>
+            <column name="date_block" value="null"/>
+            <column name="first_name" value="Василий"/>
+            <column name="second_name" value="Насунов"/>
+            <column name="patronymic" value="Георгиевич"/>
+            <column name="address_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="user_id" value="3"/>
+            <column name="password" value="IdQh0I5g"/>
+            <column name="email" value="gravyface@gmail.com"/>
+            <column name="phone_number" value="+375333232271"/>
+            <column name="date_block" value="null"/>
+            <column name="first_name" value="Василий"/>
+            <column name="second_name" value="Богодухов"/>
+            <column name="patronymic" value="Ринатович"/>
+            <column name="address_id" value="3"/>
+        </insert>
+        <insert tableName="users">
+            <column name="user_id" value="4"/>
+            <column name="password" value="UFKUXXOk"/>
+            <column name="email" value="frode@gmail.com"/>
+            <column name="phone_number" value="+375339182391"/>
+            <column name="date_block" value="null"/>
+            <column name="first_name" value="Семен"/>
+            <column name="second_name" value="Бекк"/>
+            <column name="patronymic" value="Филиппович"/>
+            <column name="address_id" value="4"/>
+        </insert>
+        <insert tableName="users">
+            <column name="user_id" value="5"/>
+            <column name="password" value="lIUPOjGP"/>
+            <column name="email" value="phizntrg@gmail.com"/>
+            <column name="phone_number" value="+375339954216"/>
+            <column name="date_block" value="null"/>
+            <column name="first_name" value="Альберт"/>
+            <column name="second_name" value="Муллаяров"/>
+            <column name="patronymic" value="Тимурович"/>
+            <column name="address_id" value="5"/>
+        </insert>
+
+
+        <rollback>
+            <delete tableName="users">
+                <whereParams>
+                    <param name="user_id" value="1"/>
+                    <param name="user_id" value="2"/>
+                    <param name="user_id" value="3"/>
+                    <param name="user_id" value="4"/>
+                    <param name="user_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

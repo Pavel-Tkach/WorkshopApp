@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="11.insert-order-table" author="Tkach_Pavel">
+        <insert tableName="order">
+            <column name="order_id" value="1"/>
+            <column name="price" value="95.87"/>
+            <column name="date" value="2023-05-03"/>
+            <column name="order_status" value="Завершён"/>
+            <column name="device_id" value="1"/>
+        </insert>
+        <insert tableName="order">
+            <column name="order_id" value="2"/>
+            <column name="price" value="60.54"/>
+            <column name="date" value="2023-05-01"/>
+            <column name="order_status" value="Завершён"/>
+            <column name="device_id" value="2"/>
+        </insert>
+        <insert tableName="order">
+            <column name="order_id" value="3"/>
+            <column name="price" value="165.99"/>
+            <column name="date" value="2023-04-29"/>
+            <column name="order_status" value="Завершён"/>
+            <column name="device_id" value="3"/>
+        </insert>
+        <insert tableName="order">
+            <column name="order_id" value="4"/>
+            <column name="price" value="90.88"/>
+            <column name="date" value="2023-04-22"/>
+            <column name="order_status" value="Завершён"/>
+            <column name="device_id" value="4"/>
+        </insert>
+        <insert tableName="order">
+            <column name="order_id" value="5"/>
+            <column name="price" value="140.65"/>
+            <column name="date" value="2023-04-25"/>
+            <column name="order_status" value="Завершён"/>
+            <column name="device_id" value="5"/>
+        </insert>
+
+
+        <rollback>
+            <delete tableName="order">
+                <whereParams>
+                    <param name="order_id" value="1"/>
+                    <param name="order_id" value="2"/>
+                    <param name="order_id" value="3"/>
+                    <param name="order_id" value="4"/>
+                    <param name="order_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

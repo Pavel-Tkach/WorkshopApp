@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="05.insert-discount-table" author="Tkach_Pavel">
+        <insert tableName="discount">
+            <column name="discount_id" value="1"/>
+            <column name="description" value="Скидка предоставляется пользователям, которые недавно зарегестрировались."/>
+            <column name="discount_type" value="Новый пользователь"/>
+            <column name="discount_amount" value="15"/>
+        </insert>
+        <insert tableName="discount">
+            <column name="discount_id" value="2"/>
+            <column name="description" value="Скидка предоставляется пользователям, которые пользуются системой на протяжении более года."/>
+            <column name="discount_type" value="Пользование системой более года"/>
+            <column name="discount_amount" value="10"/>
+        </insert>
+        <insert tableName="discount">
+            <column name="discount_id" value="3"/>
+            <column name="description" value="Скидка предоставляется только работникам системы."/>
+            <column name="discount_type" value="Для работников"/>
+            <column name="discount_amount" value="8"/>
+        </insert>
+        <insert tableName="discount">
+            <column name="discount_id" value="4"/>
+            <column name="description" value="Скидка предоставляется только работникам системы."/>
+            <column name="discount_type" value="Для работников"/>
+            <column name="discount_amount" value="8"/>
+        </insert>
+        <insert tableName="discount">
+            <column name="discount_id" value="5"/>
+            <column name="description" value="Скидка предоставляется только администраторам системы."/>
+            <column name="discount_type" value="Для администраторов"/>
+            <column name="discount_amount" value="10"/>
+        </insert>
+
+
+        <rollback>
+            <delete tableName="discount">
+                <whereParams>
+                    <param name="discount_id" value="1"/>
+                    <param name="discount_id" value="2"/>
+                    <param name="discount_id" value="3"/>
+                    <param name="discount_id" value="4"/>
+                    <param name="discount_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>
