@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="03.insert-provider-table" author="Tkach_Pavel">
+        <insert tableName="provider">
+            <column name="provider_id" value="1"/>
+            <column name="name" value="Samsung"/>
+            <column name="phone_number" value="+375338271188"/>
+            <column name="email" value="matsn@gmail.com"/>
+        </insert>
+        <insert tableName="provider">
+            <column name="provider_id" value="2"/>
+            <column name="name" value="Xiaomi"/>
+            <column name="phone_number" value="+375331529812"/>
+            <column name="email" value="warrior@gmail.com"/>
+        </insert>
+        <insert tableName="provider">
+            <column name="provider_id" value="3"/>
+            <column name="name" value="Apple"/>
+            <column name="phone_number" value="+375339281282"/>
+            <column name="email" value="keutzer@gmail.com"/>
+        </insert>
+        <insert tableName="provider">
+            <column name="provider_id" value="4"/>
+            <column name="name" value="Huawei"/>
+            <column name="phone_number" value="+375331892917"/>
+            <column name="email" value="rtanter@gmail.com"/>
+        </insert>
+        <insert tableName="provider">
+            <column name="provider_id" value="5"/>
+            <column name="name" value="Apple"/>
+            <column name="phone_number" value="+375337824261"/>
+            <column name="email" value="eminence@gmail.com"/>
+        </insert>
+
+
+        <rollback>
+            <delete tableName="provider">
+                <whereParams>
+                    <param name="provider_id" value="1"/>
+                    <param name="provider_id" value="2"/>
+                    <param name="provider_id" value="3"/>
+                    <param name="provider_id" value="4"/>
+                    <param name="provider_id" value="5"/>
+                </whereParams>
+            </delete>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

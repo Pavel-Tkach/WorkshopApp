@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="04.create-device-table" author="Tkach_Pavel">
+        <createTable tableName="device">
+            <column autoIncrement="true" name="device_id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="imei" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="model_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="device_manufacturer" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="user_id_FK" references="users(user_id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="device"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

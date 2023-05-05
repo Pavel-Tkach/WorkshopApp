@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="12.create-service_order-table" author="Pavel_Tkach">
+        <createTable tableName="service_order">
+            <column autoIncrement="true" name="service_id" type="bigint">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="service_id_FK" references="service(service_id)"
+                             deleteCascade="true"/>
+            </column>
+            <column autoIncrement="true" name="order_id" type="bigint">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="order_id_FK" references="order(order_id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="service_order"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
