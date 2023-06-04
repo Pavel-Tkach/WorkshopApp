@@ -2,14 +2,17 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
 import java.util.List;
 
 
 @Entity
 @Table(name = "discount")
 @Data
+@NoArgsConstructor
 public class Discount {
 
     @Id
@@ -26,12 +29,8 @@ public class Discount {
     @Column(nullable = false)
     private float discount_amount;
 
-    public Discount() {
-    }
-
-    @ManyToMany(mappedBy = "discounts")
+    @ManyToMany(mappedBy = "discounts", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<User> users;
-
 
 }

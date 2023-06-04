@@ -2,6 +2,7 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Data
+@NoArgsConstructor
 public class Order {
 
     @Id
@@ -25,20 +27,12 @@ public class Order {
     @Column(nullable = false)
     private String order_status;
 
-    public Order() {
-    }
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "device_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Device devices;
 
-    @ManyToMany(mappedBy = "orders")
+    @ManyToMany(mappedBy = "orders", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Service> services;
-
-    @PrePersist
-    protected void onCreate(){
-        this.date = LocalDateTime.now();
-    }
 }

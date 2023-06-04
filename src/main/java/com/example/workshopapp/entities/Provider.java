@@ -2,10 +2,12 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "provider")
 @Data
+@NoArgsConstructor
 public class Provider {
 
     @Id
@@ -22,6 +24,4 @@ public class Provider {
     @Column(nullable = false)
     private String email;
 
-    public Provider() {
-    }
 }
