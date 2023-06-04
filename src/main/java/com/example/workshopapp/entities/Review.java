@@ -2,12 +2,14 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "review")
 @Data
+@NoArgsConstructor
 public class Review {
 
     @Id
@@ -19,15 +21,12 @@ public class Review {
 
     private float rate;
 
-    public Review() {
-    }
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "service_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Service service;

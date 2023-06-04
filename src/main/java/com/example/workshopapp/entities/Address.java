@@ -2,10 +2,12 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "address")
 @Data
+@NoArgsConstructor
 public class Address {
 
     @Id
@@ -18,7 +20,4 @@ public class Address {
     private String street;
 
     private String house;
-
-    public Address() {
-    }
 }

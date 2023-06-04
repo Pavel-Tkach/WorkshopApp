@@ -2,6 +2,7 @@ package com.example.workshopapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "service")
+@NoArgsConstructor
 public class Service {
 
     @Id
@@ -29,10 +31,7 @@ public class Service {
     @Column(nullable = false)
     private float price;
 
-    public Service() {
-    }
-
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
             name = "service_order",
@@ -41,7 +40,7 @@ public class Service {
     )
     private List<Order> orders;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
             name = "service_repair_part",
