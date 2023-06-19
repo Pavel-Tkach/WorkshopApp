@@ -1,6 +1,6 @@
 package com.example.workshopapp.dto.service;
 
-import com.example.workshopapp.dto.repair_part.RepairPartWithProviderDTO;
+import com.example.workshopapp.dto.repair_part.RepairPartInfoDTO;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -21,5 +21,5 @@ public class ServiceWithRepairPartDTO {
 
     private float price;
 
-    private List<RepairPartWithProviderDTO> repairPartInfoDTOList;
+    private List<RepairPartInfoDTO> repairPartInfoDTOList;
 }
