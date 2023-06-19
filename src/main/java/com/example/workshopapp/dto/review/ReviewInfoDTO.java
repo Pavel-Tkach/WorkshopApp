@@ -15,7 +15,7 @@ public class ReviewInfoDTO {
 
     private float rate;
 
-    private UserInfoDTO user;
+    private UserInfoDTO userInfoDTO;
 
-    private ServiceInfoDTO service;
+    private ServiceInfoDTO serviceInfoDTO;
 }

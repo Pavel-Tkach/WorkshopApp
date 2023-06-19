@@ -19,5 +19,5 @@ public class OrderWithServiceDTO {
 
     private String order_status;
 
-    private List<ServiceInfoDTO> services;
+    private List<ServiceInfoDTO> serviceInfoDTOList;
 }

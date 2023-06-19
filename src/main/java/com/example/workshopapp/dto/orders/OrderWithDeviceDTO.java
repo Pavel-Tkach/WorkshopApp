@@ -18,5 +18,5 @@ public class OrderWithDeviceDTO {
 
     private String order_status;
 
-    private DeviceInfoDTO devices;
+    private DeviceInfoDTO deviceInfoDTO;
 }
