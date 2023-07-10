@@ -84,4 +84,13 @@ public class ServiceWithRepairPartMapper {
         service.setRepair_parts(repair_part);
         return service;
     }
+
+    public List<ServiceWithRepairPartDTO> toServiceWithRepairPartDtoList(List<Service> services){
+        List<ServiceWithRepairPartDTO> serviceWithRepairPartDTOList = services
+                .stream()
+                .map(service -> Objects.isNull(service) ? null : mapper.map(service, ServiceWithRepairPartDTO.class))
+                .toList();
+
+        return serviceWithRepairPartDTOList;
+    }
 }

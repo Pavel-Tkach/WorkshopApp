@@ -6,35 +6,35 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <changeSet id="11.insert-order-table" author="Tkach_Pavel">
-        <insert tableName="order">
+        <insert tableName="orders">
             <column name="order_id" value="1"/>
             <column name="price" value="95.87"/>
             <column name="date" value="2023-05-03"/>
             <column name="order_status" value="Завершён"/>
             <column name="device_id" value="1"/>
         </insert>
-        <insert tableName="order">
+        <insert tableName="orders">
             <column name="order_id" value="2"/>
             <column name="price" value="60.54"/>
             <column name="date" value="2023-05-01"/>
             <column name="order_status" value="Завершён"/>
             <column name="device_id" value="2"/>
         </insert>
-        <insert tableName="order">
+        <insert tableName="orders">
             <column name="order_id" value="3"/>
             <column name="price" value="165.99"/>
             <column name="date" value="2023-04-29"/>
             <column name="order_status" value="Завершён"/>
             <column name="device_id" value="3"/>
         </insert>
-        <insert tableName="order">
+        <insert tableName="orders">
             <column name="order_id" value="4"/>
             <column name="price" value="90.88"/>
             <column name="date" value="2023-04-22"/>
             <column name="order_status" value="Завершён"/>
             <column name="device_id" value="4"/>
         </insert>
-        <insert tableName="order">
+        <insert tableName="orders">
             <column name="order_id" value="5"/>
             <column name="price" value="140.65"/>
             <column name="date" value="2023-04-25"/>
@@ -44,7 +44,7 @@
 
 
         <rollback>
-            <delete tableName="order">
+            <delete tableName="orders">
                 <whereParams>
                     <param name="order_id" value="1"/>
                     <param name="order_id" value="2"/>

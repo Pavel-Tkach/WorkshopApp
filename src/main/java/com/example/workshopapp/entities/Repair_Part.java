@@ -28,7 +28,7 @@ public class Repair_Part {
     @Column(nullable = false)
     private int amount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "provider_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Provider provider;

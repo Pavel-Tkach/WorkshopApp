@@ -12,7 +12,7 @@
                              deleteCascade="true"/>
             </column>
             <column autoIncrement="true" name="order_id" type="bigint">
-                <constraints nullable="false" primaryKey="true" foreignKeyName="order_id_FK" references="order(order_id)" deleteCascade="true"/>
+                <constraints nullable="false" primaryKey="true" foreignKeyName="order_id_FK" references="orders(order_id)" deleteCascade="true"/>
             </column>
         </createTable>
 

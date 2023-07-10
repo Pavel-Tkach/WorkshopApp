@@ -1,8 +1,6 @@
 package com.example.workshopapp.utils.mappers.repair_part;
 
 import com.example.workshopapp.dto.repair_part.RepairPartInfoDTO;
-import com.example.workshopapp.dto.repair_part.RepairPartWithProviderDTO;
-import com.example.workshopapp.entities.Provider;
 import com.example.workshopapp.entities.Repair_Part;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +33,7 @@ public class RepairPartInfoMapper {
     public List<RepairPartInfoDTO> toRepairPartInfoDtoList(List<Repair_Part> repair_parts){
         List<RepairPartInfoDTO> repairPartInfoDtoList = repair_parts
                 .stream()
-                .map(repair_part -> Objects.isNull(repair_part) ? null : mapper.map(Repair_Part.class, RepairPartInfoDTO.class))
+                .map(repair_part -> Objects.isNull(repair_part) ? null : mapper.map(repair_part, RepairPartInfoDTO.class))
                 .toList();
         return repairPartInfoDtoList;
     }
