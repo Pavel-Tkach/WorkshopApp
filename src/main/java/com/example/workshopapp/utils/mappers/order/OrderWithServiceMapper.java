@@ -84,5 +84,12 @@ public class OrderWithServiceMapper {
         return order;
     }
 
+    public List<OrderWithServiceDTO> toOrderWithServiceDtoList(List<Order> orders){
+        List<OrderWithServiceDTO> orderWithServiceDTOList = orders
+                .stream()
+                .map(order -> Objects.isNull(order) ? null : mapper.map(order, OrderWithServiceDTO.class))
+                .toList();
 
+        return orderWithServiceDTOList;
+    }
 }

@@ -32,7 +32,7 @@ public class Order {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Device devices;
 
-    @ManyToMany(mappedBy = "orders", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "orders", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Service> services;
 }

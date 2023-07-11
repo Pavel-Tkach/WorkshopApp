@@ -40,7 +40,7 @@ public class Service {
     )
     private List<Order> orders;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
             name = "service_repair_part",

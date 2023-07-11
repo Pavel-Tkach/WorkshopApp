@@ -85,5 +85,12 @@ public class UserWithDiscountMapper {
         return user;
     }
 
+    public List<UserWithDiscountDTO> toUserWithDiscountDtoList(List<User> users){
+        List<UserWithDiscountDTO> userWithDiscountDTOList = users
+                .stream()
+                .map(user -> Objects.isNull(user) ? null : mapper.map(user, UserWithDiscountDTO.class))
+                .toList();
 
+        return userWithDiscountDTOList;
+    }
 }

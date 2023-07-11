@@ -2,7 +2,6 @@ package com.example.workshopapp.utils.mappers.order;
 
 import com.example.workshopapp.dto.devices.DeviceInfoDTO;
 import com.example.workshopapp.dto.orders.OrderWithDeviceDTO;
-import com.example.workshopapp.dto.service.ServiceInfoDTO;
 import com.example.workshopapp.entities.Device;
 import com.example.workshopapp.entities.Order;
 import jakarta.annotation.PostConstruct;
