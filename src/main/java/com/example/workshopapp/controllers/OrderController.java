@@ -25,7 +25,7 @@ public class OrderController {
 
     private final OrderWithServiceService orderWithServiceService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<OrderInfoDTO> findAllOrders(){
         return orderInfoService.findAllOrders();
     }

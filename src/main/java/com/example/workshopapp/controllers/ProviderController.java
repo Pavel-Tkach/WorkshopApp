@@ -16,7 +16,7 @@ public class ProviderController {
 
     private final ProviderService providerService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<ProviderInfoDTO> findAllProviders(){
         return providerService.findAllProviders();
     }

@@ -21,7 +21,7 @@ public class DeviceController {
 
     private final DeviceWithUserService deviceWithUserService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<DeviceInfoDTO> findAllDevices(){
         return deviceInfoService.findAllDevices();
     }

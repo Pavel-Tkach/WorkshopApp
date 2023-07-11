@@ -25,7 +25,7 @@ public class ServiceController {
 
     private final ReviewWithServiceAndUserService reviewWithServiceAndUserService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<ServiceInfoDTO> getAllServiceInfo(){
         return serviceInfoService.findAllServiceInfo();
     }

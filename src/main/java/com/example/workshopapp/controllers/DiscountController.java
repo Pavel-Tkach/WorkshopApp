@@ -16,7 +16,7 @@ public class DiscountController {
 
     private final DiscountService discountService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<DiscountInfoDTO> findAllDiscounts(){
         return discountService.findAllDiscounts();
     }

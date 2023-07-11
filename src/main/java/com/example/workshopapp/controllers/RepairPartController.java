@@ -21,7 +21,7 @@ public class RepairPartController {
 
     private final RepairPartWithProviderService repairPartWithProviderService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<RepairPartInfoDTO> findAllRepairParts(){
         return repairPartInfoService.findAllRepairParts();
     }
